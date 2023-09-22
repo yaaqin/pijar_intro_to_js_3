@@ -28,7 +28,7 @@ const calculatePayment = (deposit) => {
 
   
   // use async/await for Electric payment
-  async function processPayment(deposit) {
+   const processPayment = async (deposit) => {
     try {
       console.log('Start Payment...');
       const resultPayment = await payPLN(deposit);
@@ -40,5 +40,33 @@ const calculatePayment = (deposit) => {
     }
   }
   
-  processPayment(70000);
+//   processPayment(70000);
 
+//hitung nilai
+//generate number member antara 1-100
+const numMember = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+
+const cekMember = (member) => {
+    return new Promise ((resolve,reject) => {
+        setTimeout (() => {
+            if (member >=1 && member <= 100) {
+                resolve("Terima kasih telah menjadi member kami")
+            } else {
+                reject("kamu belum mendaftar sebagai member")
+            }
+        },2500)
+    }) 
+}
+
+const jumlahPoint = async (member) => {
+    try {
+        console.log("Memeriksa data...")
+        let success = await cekMember(member)
+        const point = 43200
+        console.log(`${success}\nmember dengan nomor ${member} memiliki poin sebanyak ${point}`)
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+jumlahPoint(1001)
