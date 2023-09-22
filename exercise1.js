@@ -28,6 +28,7 @@ const cekHariKerja = (day) => {
 
 const tryCatch = async () => {
     try {
+        console.log("wait a few minutes..")
         const callPromise = await cekHariKerja('sabtu');
         console.log(callPromise)
     } catch (Error) {
