@@ -6,32 +6,39 @@
 
 //bayar spp
 
-const jumlahTagihan = 100000
+const amountBill = 100000
 
-function bayarPLN(totalPayment) {
+const payPLN = (totalPayment) => {
     return new Promise((resolve, reject) => {
-      // Simulasi pembayaran PLN
       setTimeout(() => {
-        if (totalPayment >= jumlahTagihan) {
-            resolve("pembayaran selesai dilakukan")
+        if (totalPayment >= amountBill) {
+            resolve("Payment success...")
         } else {
-            reject("dana yang anda bayarkan kurang!")
+            reject("the funds you paid are less!")
         }
-      }, 3000); // Waktu simulasi pembayaran (2 detik)
+      }, 3000); // time to simulated payment (3 second)
     });
   }
+//calculate payment
+
+const calculatePayment = (deposit) => {
+    const result = amountBill - deposit;
+    return `The shortfall you have to pay is:${result}`
+}
+
   
-  // Menggunakan async/await untuk melakukan pembayaran PLN
-  async function prosesPembayaran(tagihanPLN) {
-  
+  // use async/await for Electric payment
+  async function processPayment(deposit) {
     try {
-      console.log('Memulai pembayaran PLN...');
-      const hasilPembayaran = await bayarPLN(tagihanPLN);
-      console.log(hasilPembayaran);
+      console.log('Start Payment...');
+      const resultPayment = await payPLN(deposit);
+      console.log(resultPayment);
     } catch (error) {
       console.error(error);
+      const moreInfo = calculatePayment(deposit)
+      console.log(moreInfo)
     }
   }
   
-  // Memanggil fungsi untuk melakukan pembayaran
-  prosesPembayaran(100000);
+  processPayment(70000);
+
