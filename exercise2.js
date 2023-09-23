@@ -1,10 +1,10 @@
-function tampilkanHasil(bulan) {
+const tampilkanHasil = (bulan) => {
     bulan.forEach((item) => {
       console.log(item);
     });
   }
 
-  function tampilkanBulan(callback) {
+  const tampilkanBulan = (callback) => {
     const bulan = [
       'Januari',
       'Februari',
