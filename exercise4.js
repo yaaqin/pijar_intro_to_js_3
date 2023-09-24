@@ -1,14 +1,12 @@
-// URL REST API yang ingin diambil datanya
-const api = 'https://jsonplaceholder.typicode.com/users';
+const api = 'https://jsonplacehollder.typicode.com/users';
 
 fetch(api)
   .then((response) => {
-    // Memeriksa status respons HTTP
     if (!response.ok) {
-      throw new Error('HTTP error ' + response.status);
+      return
+    } else {
+      return response.json();
     }
-    // Mengubah respons menjadi objek JSON
-    return response.json();
   })
   .then((data) => {
     // Mengambil semua nama (name) dari data yang diterima
@@ -20,5 +18,5 @@ fetch(api)
     });
   })
   .catch((error) => {
-    console.error('Terjadi kesalahan:', error);
+    console.error('Terjadi kesalahan');
   });
