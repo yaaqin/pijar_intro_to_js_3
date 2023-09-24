@@ -42,8 +42,8 @@ const calculatePayment = (deposit) => {
   
 //   processPayment(70000);
 
-//hitung nilai
-//generate number member antara 1-100
+
+//generate number member (1-100)
 const numMember = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
 
 const cekMember = (member) => {
