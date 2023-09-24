@@ -1,11 +1,3 @@
-//send email
-
-//get database
-
-//hitung nilai
-
-//bayar spp
-
 const amountBill = 100000
 
 const payPLN = (totalPayment) => {
