@@ -1,10 +1,10 @@
-const tampilkanHasil = (bulan) => {
+const returnMonth = (bulan) => {
     bulan.forEach((item) => {
       console.log(item);
     });
   }
 
-  const tampilkanBulan = (callback) => {
+  const getmonth = (callback) => {
     const bulan = [
       'Januari',
       'Februari',
@@ -21,12 +21,10 @@ const tampilkanHasil = (bulan) => {
     ];
   
     // Menggunakan method map untuk memproses setiap elemen bulan
-    const bulanDalamBahasa = bulan.map((namaBulan) => {
+    const result = bulan.map((namaBulan) => {
       return `Bulan ${namaBulan}`;
     });
-  
-    // Panggil callback function dengan hasilnya
-    callback(bulanDalamBahasa);
+    callback(result);
   }
 
-  tampilkanBulan(tampilkanHasil);
+  getmonth(returnMonth);
