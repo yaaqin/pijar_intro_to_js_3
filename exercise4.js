@@ -1,8 +1,7 @@
 // URL REST API yang ingin diambil datanya
-const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+const api = 'https://jsonplaceholder.typicode.com/users';
 
-// Menggunakan metode fetch untuk mengambil data dari REST API
-fetch(apiUrl)
+fetch(api)
   .then((response) => {
     // Memeriksa status respons HTTP
     if (!response.ok) {
