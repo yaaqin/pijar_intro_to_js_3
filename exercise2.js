@@ -1,30 +1,24 @@
-const returnMonth = (bulan) => {
-    bulan.forEach((item) => {
-      console.log(item);
-    });
-  }
+//displaying months name
 
-  const getmonth = (callback) => {
-    const bulan = [
-      'Januari',
-      'Februari',
-      'Maret',
-      'April',
-      'Mei',
-      'Juni',
-      'Juli',
-      'Agustus',
-      'September',
-      'Oktober',
-      'November',
-      'Desember',
-    ];
-  
-    // Menggunakan method map untuk memproses setiap elemen bulan
-    const result = bulan.map((namaBulan) => {
-      return `Bulan ${namaBulan}`;
-    });
-    callback(result);
-  }
+const getMonth = (callback) => {
+    setTimeout (() => {
+        let error = false
+        let month = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+        if(!error) {
+            callback(null, month)
+        } else {
+            callback(new Error("Sorry Data Not Found"))
+        }
+    }, 4000);
+}
 
-  getmonth(returnMonth);
+const mapMonth = (nul, month) => {
+    const result = month.map((namaBulan) => {
+        return `Bulan ${namaBulan}`;
+      });
+      result.forEach((item) => {
+        console.log(item);
+        });
+}
+
+getMonth(mapMonth)

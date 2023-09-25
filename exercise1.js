@@ -14,26 +14,32 @@ const cekHariKerja = (day) => {
     })
 }
 
+const workDay = (day) => {
+    return(`Hari ${day} merupakan hari kerja`)
+}
+
 //penggunaan then catch
 
-// cekHariKerja('sabtu').then((result) => {
-//     console.log('proses berhasil dan selesai')
-//     console.log(result)
+// cekHariKerja('sabtu')
+// .then((result) => {
+//     const isWorkDay = workDay(result)
+//     console.log(isWorkDay)
 // })
 // .catch((Error) => {
-//     console.log('hari tersebut bukan hari kerja')
+//     console.log(Error)
 // })
 
 //penggunaan try catch
 
-const tryCatch = async () => {
+const tryCatch = async (day) => {
     try {
         console.log("wait a few minutes..")
-        const callPromise = await cekHariKerja('senin');
-        console.log(callPromise)
+        const callPromise = await cekHariKerja(day);
+        const isWorkDay = await workDay(callPromise)
+        console.log(isWorkDay)
     } catch (Error) {
         console.log(Error)
     }
 }
 
-tryCatch()
+tryCatch("sabtu")
