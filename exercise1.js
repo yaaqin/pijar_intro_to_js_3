@@ -8,7 +8,7 @@ const cekHariKerja = (day) => {
             if(cek){
                 resolve(cek)
             } else {
-                reject('Hari ini bukan hari kerja')
+                reject(new Error('Hari ini bukan hari kerja'))
             }
         },3000)
     })
@@ -38,7 +38,7 @@ const tryCatch = async (day) => {
         const isWorkDay = await workDay(callPromise)
         console.log(isWorkDay)
     } catch (Error) {
-        console.log(Error)
+        console.log(Error.message)
     }
 }
 
